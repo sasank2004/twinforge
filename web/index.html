@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TwinForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+<div id="app">
+  <!-- title bar + workspace tabs -->
+  <div class="titlebar">
+    <div class="brand"><div class="mark"></div><b>TWINFORGE</b></div>
+    <div class="tabs" id="tabs">
+      <button data-tab="telemetry" class="active"><span class="k">01</span> Telemetry</button>
+      <button data-tab="prevent"><span class="k">02</span> Prevent</button>
+      <button data-tab="diagnose"><span class="k">03</span> Diagnose</button>
+      <button data-tab="resolve"><span class="k">04</span> Resolve</button>
+    </div>
+    <div class="grow"></div>
+    <div class="status-chip" id="chip-clock"><span class="mono" id="s-clock">0:00</span></div>
+    <div class="status-chip" id="chip-state"><span class="d"></span><span id="s-state">—</span></div>
+  </div>
+
+  <!-- per-tab toolbar -->
+  <div class="toolbar" id="toolbar"></div>
+
+  <!-- workspace (one pane per tab) -->
+  <div class="workspace">
+    <div class="tabpane" data-tab="telemetry" id="pane-telemetry"></div>
+    <div class="tabpane hidden" data-tab="prevent" id="pane-prevent"></div>
+    <div class="tabpane hidden" data-tab="diagnose" id="pane-diagnose"></div>
+    <div class="tabpane hidden" data-tab="resolve" id="pane-resolve"></div>
+  </div>
+</div>
+<div id="modal-root"></div>
+<script type="module" src="/web/app.js"></script>
+</body>
+</html>

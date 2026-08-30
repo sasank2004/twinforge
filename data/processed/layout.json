@@ -1,0 +1,278 @@
+{
+  "takt_s": 12.0,
+  "stations": [
+    {
+      "id": "S1",
+      "name": "Body Framing",
+      "segment": "BODY",
+      "nominal_ct": 22.0,
+      "instrumentation": "HIGH",
+      "x": 0.04,
+      "y": 0.16,
+      "is_source": true,
+      "is_sink": false,
+      "sensors": [
+        "current",
+        "vibration",
+        "temp",
+        "weld"
+      ],
+      "load": 2,
+      "healthy_utilisation": 0.733
+    },
+    {
+      "id": "S2",
+      "name": "Chassis Prep",
+      "segment": "BODY",
+      "nominal_ct": 40.0,
+      "instrumentation": "LOW",
+      "x": 0.04,
+      "y": 0.5,
+      "is_source": true,
+      "is_sink": false,
+      "sensors": [],
+      "load": 1,
+      "healthy_utilisation": 0.667
+    },
+    {
+      "id": "S3",
+      "name": "Paint Shop",
+      "segment": "PAINT",
+      "nominal_ct": 20.0,
+      "instrumentation": "HIGH",
+      "x": 0.04,
+      "y": 0.84,
+      "is_source": true,
+      "is_sink": false,
+      "sensors": [
+        "temp",
+        "current",
+        "coat"
+      ],
+      "load": 2,
+      "healthy_utilisation": 0.667
+    },
+    {
+      "id": "S4",
+      "name": "Powertrain Drop",
+      "segment": "FINAL",
+      "nominal_ct": 24.0,
+      "instrumentation": "HIGH",
+      "x": 0.34,
+      "y": 0.3,
+      "is_source": false,
+      "is_sink": false,
+      "sensors": [
+        "torque",
+        "current",
+        "temp",
+        "vibration"
+      ],
+      "load": 2,
+      "healthy_utilisation": 0.8
+    },
+    {
+      "id": "S5",
+      "name": "Interior & Wiring",
+      "segment": "FINAL",
+      "nominal_ct": 23.0,
+      "instrumentation": "MEDIUM",
+      "x": 0.34,
+      "y": 0.58,
+      "is_source": false,
+      "is_sink": false,
+      "sensors": [
+        "current",
+        "voltage"
+      ],
+      "load": 2,
+      "healthy_utilisation": 0.767
+    },
+    {
+      "id": "S6",
+      "name": "Battery / HV",
+      "segment": "FINAL",
+      "nominal_ct": 42.0,
+      "instrumentation": "LOW",
+      "x": 0.34,
+      "y": 0.86,
+      "is_source": false,
+      "is_sink": false,
+      "sensors": [
+        "voltage",
+        "cell"
+      ],
+      "load": 1,
+      "healthy_utilisation": 0.7
+    },
+    {
+      "id": "S7",
+      "name": "Underbody Marriage",
+      "segment": "FINAL",
+      "nominal_ct": 16.0,
+      "instrumentation": "HIGH",
+      "x": 0.63,
+      "y": 0.4,
+      "is_source": false,
+      "is_sink": false,
+      "sensors": [
+        "torque",
+        "vibration",
+        "current"
+      ],
+      "load": 3,
+      "healthy_utilisation": 0.8
+    },
+    {
+      "id": "S8",
+      "name": "Trim Line",
+      "segment": "FINAL",
+      "nominal_ct": 21.0,
+      "instrumentation": "HIGH",
+      "x": 0.63,
+      "y": 0.72,
+      "is_source": false,
+      "is_sink": false,
+      "sensors": [
+        "torque",
+        "current"
+      ],
+      "load": 2,
+      "healthy_utilisation": 0.7
+    },
+    {
+      "id": "S9",
+      "name": "Final Assembly / QA",
+      "segment": "FINAL",
+      "nominal_ct": 10.0,
+      "instrumentation": "HIGH",
+      "x": 0.9,
+      "y": 0.55,
+      "is_source": false,
+      "is_sink": true,
+      "sensors": [
+        "temp"
+      ],
+      "load": 5,
+      "healthy_utilisation": 0.833
+    }
+  ],
+  "edges": [
+    {
+      "src": "S1",
+      "dst": "S4",
+      "capacity": 8
+    },
+    {
+      "src": "S1",
+      "dst": "S5",
+      "capacity": 8
+    },
+    {
+      "src": "S2",
+      "dst": "S4",
+      "capacity": 8
+    },
+    {
+      "src": "S3",
+      "dst": "S5",
+      "capacity": 8
+    },
+    {
+      "src": "S3",
+      "dst": "S6",
+      "capacity": 8
+    },
+    {
+      "src": "S4",
+      "dst": "S7",
+      "capacity": 8
+    },
+    {
+      "src": "S6",
+      "dst": "S7",
+      "capacity": 8
+    },
+    {
+      "src": "S5",
+      "dst": "S8",
+      "capacity": 8
+    },
+    {
+      "src": "S7",
+      "dst": "S9",
+      "capacity": 8
+    },
+    {
+      "src": "S8",
+      "dst": "S9",
+      "capacity": 8
+    }
+  ],
+  "routes": {
+    "R1": [
+      "S1",
+      "S4",
+      "S7",
+      "S9"
+    ],
+    "R2": [
+      "S1",
+      "S5",
+      "S8",
+      "S9"
+    ],
+    "R3": [
+      "S2",
+      "S4",
+      "S7",
+      "S9"
+    ],
+    "R4": [
+      "S3",
+      "S5",
+      "S8",
+      "S9"
+    ],
+    "R5": [
+      "S3",
+      "S6",
+      "S7",
+      "S9"
+    ]
+  },
+  "segments": [
+    "BODY",
+    "PAINT",
+    "FINAL"
+  ],
+  "sources": [
+    "S1",
+    "S2",
+    "S3"
+  ],
+  "sink": "S9",
+  "sensor_units": {
+    "temp": "\u00b0C",
+    "current": "A",
+    "vibration": "mm/s",
+    "torque": "N\u00b7m",
+    "voltage": "V",
+    "weld": "idx",
+    "coat": "idx",
+    "cell": "idx"
+  },
+  "fastening": [
+    "S4",
+    "S7",
+    "S8"
+  ],
+  "quality": {
+    "S1": "weld",
+    "S3": "coat",
+    "S4": "torque",
+    "S6": "cell",
+    "S7": "torque",
+    "S8": "torque"
+  }
+}

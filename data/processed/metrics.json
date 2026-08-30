@@ -1,0 +1,27 @@
+{
+  "n_runs": 128,
+  "n_train_samples": 5150,
+  "n_holdout_samples": 1250,
+  "forecast_train_acc": 0.9183,
+  "forecast_holdout_acc": 0.8904,
+  "detector_top1": 1.0,
+  "detector_regret_cars": 0.0,
+  "utilisation_regret_cars": 0.0,
+  "sparse_sensing_agreement": 0.964,
+  "noise_floor_cars": 1.0,
+  "horizon_min": 5,
+  "window_min": 5,
+  "label_distribution": {
+    "NONE": 1270,
+    "S1": 740,
+    "S2": 380,
+    "S3": 560,
+    "S4": 740,
+    "S5": 560,
+    "S6": 380,
+    "S7": 560,
+    "S8": 470,
+    "S9": 740
+  },
+  "generated_at": "2026-08-30 16:35:10"
+}

@@ -1,0 +1,15 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+plotly
+networkx
+fastapi
+uvicorn
+pydantic
+streamlit
+requests
+pytest
+pyarrow
+python-pptx
